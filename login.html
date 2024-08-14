@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Form</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+        }
+        .navbar {
+            background-color: #007bff; /* Change to your desired color */
+        }
+        .navbar-brand, .nav-link {
+            color: #fff !important;
+        }
+        .navbar-brand:hover, .nav-link:hover {
+            color: #e0e0e0 !important;
+        }
+        .form-container {
+            background: #fff;
+            padding: 20px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+            width: 320px;
+            margin: 0 auto;
+            margin-top: 20px;
+        }
+        .form-container h2 {
+            margin: 0 0 20px;
+            text-align: center;
+        }
+        .form-container .form-group {
+            position: relative;
+        }
+        .form-container input {
+            width: 100%;
+            padding: 10px 40px 10px 40px;
+            margin-bottom: 10px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .form-container .fa {
+            position: absolute;
+            top: 50%;
+            left: 10px;
+            transform: translateY(-50%);
+            color: #007bff;
+        }
+        .form-container button {
+            width: 100%;
+            padding: 10px;
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+        .form-container button:hover {
+            background-color: #0056b3;
+        }
+        .form-container .error {
+            color: red;
+            font-size: 0.875em;
+            margin: 10px 0;
+        }
+        .form-container .success {
+            color: green;
+            font-size: 0.875em;
+            margin: 10px 0;
+        }
+        .login-option {
+            text-align: center;
+            margin-top: 20px;
+        }
+        .login-option a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .login-option a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <a class="navbar-brand" href="index.html">FreelanceHub</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html"><i class="fas fa-home"></i> Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="signup.html"><i class="fas fa-user-plus"></i> Sign Up</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html"><i class="fas fa-sign-in-alt"></i> Login</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="form-container">
+        <h2>Login</h2>
+        <form action="connect.php"method="post">
+        <form id="login-form">
+            <div class="form-group">
+                <i class="fas fa-envelope"></i>
+                <label for="email">Email</label>
+                <input type="email" id="email" name="email" required>
+            </div>
+
+            <div class="form-group">
+                <i class="fas fa-lock"></i>
+                <label for="password">Password</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+
+            <button type="submit">Login</button>
+        </form>
+        <div class="login-option">
+            <p>Don't have an account? <a href="signup.html">Sign up here</a></p>
+        </div>
+        <div id="form-messages" class="error"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form submission
+
+            const email = document.getElementById('email').value;
+            const password = document.getElementById('password').value;
+            const errors = [];
+
+            // Basic validation
+            if (!email || !password) {
+                errors.push('Both email and password are required.');
+            }
+
+            if (errors.length > 0) {
+                document.getElementById('form-messages').innerHTML = errors.join('<br>');
+            } else {
+                // Simulate successful login and redirect to the home page
+                window.location.href = 'index.html'; // Replace with your home page URL
+            }
+        });
+    </script>
+</body>
+</html>

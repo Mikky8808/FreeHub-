@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f0f2f5;
+        }
+        .navbar {
+            background-color: #007bff; /* Custom background color for the navbar */
+        }
+        .navbar-brand, .nav-link {
+            color: #ffffff !important;
+        }
+        .navbar-nav .nav-link:hover {
+            color: #d4d4d4 !important; /* Slightly lighter color on hover */
+        }
+        .dashboard-card {
+            text-align: center;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .dashboard-card i {
+            font-size: 2rem;
+            margin-bottom: 10px;
+            color: #007bff;
+        }
+        .live-jobs {
+            border: 1px solid #dee2e6;
+            border-radius: 8px;
+            padding: 20px;
+            background-color: #ffffff;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .live-jobs .media {
+            border-bottom: 1px solid #dee2e6;
+            padding-bottom: 10px;
+            margin-bottom: 10px;
+        }
+        .live-jobs .media:last-child {
+            border-bottom: none;
+        }
+        .btn-custom {
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="homepage.html">FreelanceHub</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="homepage.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="profile.html">Profile</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="projects.html">Projects</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="wallet.html">Enterprise Wallet</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="dashboard.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="logout.html">Logout</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="container mt-5">
+        <div class="row">
+            <div class="col-md-3">
+                <div class="dashboard-card">
+                    <i class="fas fa-tasks"></i>
+                    <h4>Projects Done</h4>
+                    <p>5</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="dashboard-card">
+                    <i class="fas fa-dollar-sign"></i>
+                    <h4>Balance</h4>
+                    <p>$300</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="dashboard-card">
+                    <i class="fas fa-briefcase"></i>
+                    <h4>Jobs</h4>
+                    <p>2</p>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="dashboard-card">
+                    <i class="fas fa-money-bill-wave"></i>
+                    <h4>Withdraw</h4>
+                    <p>Pending</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="live-jobs mt-4">
+            <h4>Live Jobs</h4>
+            <ul class="list-unstyled">
+                <li class="media">
+                    <i class="fas fa-briefcase mr-3"></i>
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-1">Web Developer</h5>
+                        $500 - Posted 2 days ago
+                        <button class="btn btn-info btn-sm float-right btn-custom" onclick="applyJob()">Apply</button>
+                        <button class="btn btn-secondary btn-sm float-right btn-custom" onclick="saveJob()">Save</button>
+                    </div>
+                </li>
+                <li class="media my-4">
+                    <i class="fas fa-briefcase mr-3"></i>
+                    <div class="media-body">
+                        <h5 class="mt-0 mb-1">Graphic Designer</h5>
+                        $300 - Posted 5 days ago
+                        <button class="btn btn-info btn-sm float-right btn-custom" onclick="applyJob()">Apply</button>
+                        <button class="btn btn-secondary btn-sm float-right btn-custom" onclick="saveJob()">Save</button>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.1/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
+    <script>
+        function applyJob() {
+            alert('Job applied successfully!');
+        }
+
+        function saveJob() {
+            alert('Job saved successfully!');
+        }
+    </script>
+</body>
+</html>
